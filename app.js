@@ -8,9 +8,17 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./api/users');
 var todoRouter = require('./api/todo');
+var oilStationRouter = require('./api/oilstation');
 var db = require('./api/controllers/db')
 
 var app = express();
+
+// 监听端口，等待连接
+const port = 8088;
+app.listen(port);
+
+// 输出服务器启动日志
+console.log(`Server listening at http://127.0.0.1:${port}`);
 
 
 
@@ -39,6 +47,7 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/todo', todoRouter);
+app.use('/oilstation', oilStationRouter);
 
 
 

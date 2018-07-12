@@ -53,9 +53,9 @@ router.post('/register', function(req, res, next){
 
     UserSchema.create(userInfo, function(err,resData){
       if(err){
-        res.json({code:500, msg:'创建失败'})
+        res.json({code:500, msg:'注册失败，请重试'})
       }else{
-        res.json({code:200, msg:'创建成功'})
+        res.json({code:200, msg:'注册成功'})
       }
 
     })

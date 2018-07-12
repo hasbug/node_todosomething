@@ -54,7 +54,7 @@ router.post('/addTODO', function(req, res, next){
         if(err){
             next(err)
         }else{
-            res.send('添加成功')
+            res.send({code:200, msg:'创建成功'})
         }
     });
 });
